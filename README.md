@@ -1,0 +1,2 @@
+# Pathfinder
+Pathfinder is an Underwater Cable Connecting Robot got evaluated to connect a cable to an IR beacon autonomously. This project achieved a perfect score in the final evaluations (Videos of Evaluations located in the repository). As the team captain and lead programmer, I was in charge of designing, programming, and testing all software aspects of the robot. This repository holds all coding milestones.
