@@ -28,7 +28,7 @@ For this challenge the robot must be built with the given VEX parts with the fol
 
 The team came up with a three-wheel robot (Pathfinder) with a single arm to which the cable was attached, and upon actuation, the robot performed the connection.
 
-[Insert image below]
+<img style="display: inline-block" src="" alt="Pathfinder Image" width="45%">
 
 From the software side of this project, the critical part of this challenge was to design a software system to control a robot to interface with its environment in a predictable, accurate, and consistent way. For this, a widespread algorithm in robotics and physical systems control called a Proportional Integral Derivative was a great solution.
 PID
