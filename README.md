@@ -37,11 +37,49 @@ Since ONC simplified the environment for this project, the most challenging inte
 
 ### C Code
 
-[Insert code block]
+Below is the PID feedback cycle for one of the drive train wheels.
+```c
+while (true){
+
+  //intialize error as the differance from the true value and the target
+  error = leftDriveTrainEncoderTarget - (SensorValue[leftDTSensor]);
+  //calculate the real time integral as an increment of the slices of error under the the SensorValue vs time curve
+  integral += error;
+
+  //calculate the real time derivitive by calculating the difference between the error and previos error
+  derivative = error - errorPrevious;
+
+  //To prevent integral wind up limmit how big the intgral can get
+  if(abs(integral) > INTEGRAL_LIMIT){
+    integral = sgn(integral) * INTEGRAL_LIMIT;
+  }
+
+  //assign the respective gains
+  int pGain = KP * error;
+  int iGain = KI * integral;
+  int dGain = KD * derivative;
+
+  // add all the gains to make the power
+  power = pGain + dGain + iGain; //+ iGain + dGain;
+  //writeDebugStream("%-5d %-5d\n" , dGain, power);
+
+  //limit the power to avoid skid
+  if(abs(power) > MAX_POWER){
+    power = sgn(power) * MAX_POWER;
+  }
+  //assign power to the motor
+  motor[leftDT] = power;
+
+  //save the previous error for next loop
+  errorPrevious = error;
+
+  wait1Msec(10);
+}
+```
 
 ### Tuning
 
-When it comes to PID tuning is the hardest part. For this I used the Ziegler Nicolas Method of tuning. Although not perfect gets the PID to a close enough target that allows small manual adjustments. This resulted in the following response.
+When it comes to PID tuning is the hardest part. For this I used the Ziegler Nicolas Method of tuning. Although not perfect gets the PID to a close enough target that allows small manual adjustments. This resulted in the following response for one of the wheels.
 
 [insert photo of response]
 
@@ -60,15 +98,15 @@ The robot was evaluated in three challenges as seen in the animations below.
 
 ### Short
 
-[]
-
-### Mid
-
-[]
+<img style="display: inline-block" src="pathfinder_gifs/short_trial_pathfinder.gif"/>
 
 ### Long
 
-[]
+<img style="display: inline-block" src="pathfinder_gifs/long_trial_pathfinder.gif"/>
+
+### Tracking
+
+<img style="display: inline-block" src="pathfinder_gifs/tracking_trial_pathfinder.gif"/>
 
 Since the robot completed all challenges with no failures, and all tasks satisfied we were rewarded with a 100% evaluation score. 
 
