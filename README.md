@@ -28,7 +28,7 @@ For this challenge the robot must be built with the given VEX parts with the fol
 
 The team came up with a three-wheel robot (Pathfinder) with a single arm to which the cable was attached, and upon actuation, the robot performed the connection.
 
-<img style="display: inline-block" src="photos/Github_Pathfinder.png" alt="Pathfinder Image" width="75%">
+<img style="display: inline-block" src="Photos/Github_Pathfinder.png" alt="Pathfinder Image" width="75%">
 
 From the software side of this project, the critical part of this challenge was to design a software system to control a robot to interface with its environment in a predictable, accurate, and consistent way. For this, a widespread algorithm in robotics and physical systems control called a Proportional Integral Derivative was a great solution.
 PID
@@ -81,7 +81,7 @@ while (true){
 
 When it comes to PID tuning is the hardest part. For this I used the Ziegler Nicolas Method of tuning. Although not perfect gets the PID to a close enough target that allows small manual adjustments. This resulted in the following response for one of the wheels.
 
-[insert photo of response]
+<img style="display: inline-block" src="Photos/pid_response.png" alt="Pathfinder Image" width="75%">
 
 ## Setup
 
