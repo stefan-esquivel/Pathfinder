@@ -11,9 +11,9 @@ To explore making these connections autonomously, ONC created a challenge for th
 
 ### Tasks
 
-* Connect cable to IR beacon (simulating new sensor) from 1ft away!
 * Connect cable to IR beacon from 3ft away
 * Connect cable to IR beacon from 7ft away
+* Track beacon from 5 ft away
 
 For this challenge the robot must be built with the given VEX parts with the following requirements.
 
