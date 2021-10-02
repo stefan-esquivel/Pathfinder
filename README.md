@@ -79,7 +79,7 @@ while (true){
 
 ### Tuning
 
-When it comes to PID tuning is the hardest part. For this I used the[Ziegler Nicolas Method](https://en.wikipedia.org/wiki/Ziegler%E2%80%93Nichols_method) of tuning. Although not perfect gets the PID to a close enough target that allows small manual adjustments. This resulted in the following response for one of the wheels.
+When it comes to PID tuning is the hardest part. For this I used the [Ziegler Nicolas Method](https://en.wikipedia.org/wiki/Ziegler%E2%80%93Nichols_method) of tuning. Although not perfect gets the PID to a close enough target that allows small manual adjustments. This resulted in the following response for one of the wheels.
 
 <img style="display: inline-block" src="Photos/pid_response.png" alt="Pathfinder Image" width="75%">
 
